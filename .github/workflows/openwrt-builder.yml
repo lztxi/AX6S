@@ -39,7 +39,7 @@ jobs:
         fetch-depth: 0
 
     - name: cache
-      uses: HiGarfield/cachewrtbuild@main
+      uses: stupidloud/cachewrtbuild@main
 
     - name: Initialization environment
       env:
