@@ -38,9 +38,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: cache
-      uses: stupidloud/cachewrtbuild@main
-
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -91,7 +88,10 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+        
+    - name: cache
+      uses: stupidloud/cachewrtbuild@main
+      
     - name: Compile the firmware
       id: compile
       run: |
