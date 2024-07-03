@@ -13,7 +13,7 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
-sed -i 's/routing.git;openwrt-22.03/routing.git;2610af4/g' feeds.conf.default
+#sed -i 's/routing.git;openwrt-22.03/routing.git;2610af4/g' feeds.conf.default
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
