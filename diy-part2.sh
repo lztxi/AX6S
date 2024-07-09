@@ -14,7 +14,6 @@
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate
 sed -i 's/=6.1/=5.15/g' target/linux/mediatek/Makefile
-sed -i 's/=6.6/=6.1/g' target/linux/mediatek/Makefile
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
