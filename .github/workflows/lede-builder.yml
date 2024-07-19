@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/lztxi/lede
-  REPO_BRANCH: d96fcb36dfd42d37786934c787fee34ce29e52ff
+  REPO_BRANCH: 5.15
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
