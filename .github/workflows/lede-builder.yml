@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/lztxi/lede
   REPO_BRANCH: d96fcb36dfd42d37786934c787fee34ce29e52ff
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
