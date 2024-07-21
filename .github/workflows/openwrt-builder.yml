@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder-加速
+name: OpenWrt Builder-缓存
 
 on:
   repository_dispatch:
@@ -81,7 +81,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Cache
-      uses: JuliusBairaktaris/cachewrtbuild@main
+      uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: 'true'
         prefix: ${{ github.workspace }}/openwrt
