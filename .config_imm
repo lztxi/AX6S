@@ -1811,6 +1811,7 @@ CONFIG_PACKAGE_libiwinfo-data=y
 
 # CONFIG_PACKAGE_aircard-pcmcia-firmware is not set
 # CONFIG_PACKAGE_airoha-en8811h-firmware is not set
+# CONFIG_PACKAGE_amd64-microcode is not set
 # CONFIG_PACKAGE_amdgpu-firmware is not set
 # CONFIG_PACKAGE_ar3k-firmware is not set
 # CONFIG_PACKAGE_ath10k-board-qca4019 is not set
@@ -2388,8 +2389,8 @@ CONFIG_PACKAGE_kmod-lib-crc32c=y
 # CONFIG_PACKAGE_kmod-ebtables-ipv4 is not set
 # CONFIG_PACKAGE_kmod-ebtables-ipv6 is not set
 # CONFIG_PACKAGE_kmod-ebtables-watchers is not set
-CONFIG_PACKAGE_kmod-ip6tables=y
-CONFIG_PACKAGE_kmod-ip6tables-extra=y
+# CONFIG_PACKAGE_kmod-ip6tables is not set
+# CONFIG_PACKAGE_kmod-ip6tables-extra is not set
 # CONFIG_PACKAGE_kmod-ipt-account is not set
 # CONFIG_PACKAGE_kmod-ipt-asn is not set
 # CONFIG_PACKAGE_kmod-ipt-chaos is not set
@@ -2397,18 +2398,18 @@ CONFIG_PACKAGE_kmod-ip6tables-extra=y
 # CONFIG_PACKAGE_kmod-ipt-cluster is not set
 # CONFIG_PACKAGE_kmod-ipt-compat-xtables is not set
 # CONFIG_PACKAGE_kmod-ipt-condition is not set
-CONFIG_PACKAGE_kmod-ipt-conntrack=y
+# CONFIG_PACKAGE_kmod-ipt-conntrack is not set
 # CONFIG_PACKAGE_kmod-ipt-conntrack-extra is not set
 # CONFIG_PACKAGE_kmod-ipt-conntrack-label is not set
 # CONFIG_PACKAGE_kmod-ipt-coova is not set
-CONFIG_PACKAGE_kmod-ipt-core=y
+# CONFIG_PACKAGE_kmod-ipt-core is not set
 # CONFIG_PACKAGE_kmod-ipt-debug is not set
 # CONFIG_PACKAGE_kmod-ipt-delude is not set
 # CONFIG_PACKAGE_kmod-ipt-dhcpmac is not set
 # CONFIG_PACKAGE_kmod-ipt-dnetmap is not set
 # CONFIG_PACKAGE_kmod-ipt-extra is not set
 # CONFIG_PACKAGE_kmod-ipt-filter is not set
-CONFIG_PACKAGE_kmod-ipt-fullconenat=y
+# CONFIG_PACKAGE_kmod-ipt-fullconenat is not set
 # CONFIG_PACKAGE_kmod-ipt-fuzzy is not set
 # CONFIG_PACKAGE_kmod-ipt-geoip is not set
 # CONFIG_PACKAGE_kmod-ipt-hashlimit is not set
@@ -2425,9 +2426,9 @@ CONFIG_PACKAGE_kmod-ipt-fullconenat=y
 # CONFIG_PACKAGE_kmod-ipt-logmark is not set
 # CONFIG_PACKAGE_kmod-ipt-lscan is not set
 # CONFIG_PACKAGE_kmod-ipt-lua is not set
-CONFIG_PACKAGE_kmod-ipt-nat=y
+# CONFIG_PACKAGE_kmod-ipt-nat is not set
 # CONFIG_PACKAGE_kmod-ipt-nat-extra is not set
-CONFIG_PACKAGE_kmod-ipt-nat6=y
+# CONFIG_PACKAGE_kmod-ipt-nat6 is not set
 # CONFIG_PACKAGE_kmod-ipt-nathelper-rtsp is not set
 # CONFIG_PACKAGE_kmod-ipt-nflog is not set
 # CONFIG_PACKAGE_kmod-ipt-nfqueue is not set
@@ -2451,13 +2452,13 @@ CONFIG_PACKAGE_kmod-nf-conntrack=y
 CONFIG_PACKAGE_kmod-nf-conntrack-netlink=y
 CONFIG_PACKAGE_kmod-nf-conntrack6=y
 CONFIG_PACKAGE_kmod-nf-flow=y
-CONFIG_PACKAGE_kmod-nf-ipt=y
-CONFIG_PACKAGE_kmod-nf-ipt6=y
+# CONFIG_PACKAGE_kmod-nf-ipt is not set
+# CONFIG_PACKAGE_kmod-nf-ipt6 is not set
 # CONFIG_PACKAGE_kmod-nf-ipvs is not set
 CONFIG_PACKAGE_kmod-nf-log=y
 CONFIG_PACKAGE_kmod-nf-log6=y
 CONFIG_PACKAGE_kmod-nf-nat=y
-CONFIG_PACKAGE_kmod-nf-nat6=y
+# CONFIG_PACKAGE_kmod-nf-nat6 is not set
 # CONFIG_PACKAGE_kmod-nf-nathelper is not set
 # CONFIG_PACKAGE_kmod-nf-nathelper-extra is not set
 CONFIG_PACKAGE_kmod-nf-reject=y
@@ -2469,7 +2470,7 @@ CONFIG_PACKAGE_kmod-nfnetlink=y
 # CONFIG_PACKAGE_kmod-nfnetlink-queue is not set
 # CONFIG_PACKAGE_kmod-nft-arp is not set
 # CONFIG_PACKAGE_kmod-nft-bridge is not set
-CONFIG_PACKAGE_kmod-nft-compat=y
+# CONFIG_PACKAGE_kmod-nft-compat is not set
 # CONFIG_PACKAGE_kmod-nft-connlimit is not set
 CONFIG_PACKAGE_kmod-nft-core=y
 # CONFIG_PACKAGE_kmod-nft-dup-inet is not set
@@ -2993,6 +2994,8 @@ CONFIG_PACKAGE_kmod-mt7915e=y
 # CONFIG_PACKAGE_kmod-rtl8821ae is not set
 # CONFIG_PACKAGE_kmod-rtl8xxxu is not set
 # CONFIG_PACKAGE_kmod-rtw88-8723de is not set
+# CONFIG_PACKAGE_kmod-rtw88-8723ds is not set
+# CONFIG_PACKAGE_kmod-rtw88-8723du is not set
 # CONFIG_PACKAGE_kmod-rtw88-8821ce is not set
 # CONFIG_PACKAGE_kmod-rtw88-8821cu is not set
 # CONFIG_PACKAGE_kmod-rtw88-8822be is not set
@@ -3786,12 +3789,12 @@ CONFIG_PACKAGE_ucode-mod-uloop=y
 # Firewall
 #
 # CONFIG_PACKAGE_libfko is not set
-CONFIG_PACKAGE_libip4tc=y
-CONFIG_PACKAGE_libip6tc=y
-CONFIG_PACKAGE_libiptext=y
-CONFIG_PACKAGE_libiptext-nft=y
-CONFIG_PACKAGE_libiptext6=y
-CONFIG_PACKAGE_libxtables=y
+# CONFIG_PACKAGE_libip4tc is not set
+# CONFIG_PACKAGE_libip6tc is not set
+# CONFIG_PACKAGE_libiptext is not set
+# CONFIG_PACKAGE_libiptext-nft is not set
+# CONFIG_PACKAGE_libiptext6 is not set
+# CONFIG_PACKAGE_libxtables is not set
 # CONFIG_IPTABLES_CONNLABEL is not set
 # end of Firewall
 
@@ -4972,7 +4975,7 @@ CONFIG_LUCI_JSMIN=y
 # CONFIG_LUCI_LANG_zh_Hant is not set
 # end of Translations
 
-CONFIG_PACKAGE_luci-compat=y
+# CONFIG_PACKAGE_luci-compat is not set
 CONFIG_PACKAGE_luci-lua-runtime=y
 # CONFIG_PACKAGE_luci-mod-admin-full is not set
 # CONFIG_PACKAGE_luci-mod-battstatus is not set
@@ -5006,7 +5009,7 @@ CONFIG_PACKAGE_luci-app-argon-config=y
 # CONFIG_PACKAGE_luci-app-aria2 is not set
 # CONFIG_PACKAGE_luci-app-arpbind is not set
 # CONFIG_PACKAGE_luci-app-attendedsysupgrade is not set
-CONFIG_PACKAGE_luci-app-autoreboot=y
+# CONFIG_PACKAGE_luci-app-autoreboot is not set
 # CONFIG_PACKAGE_luci-app-babeld is not set
 # CONFIG_PACKAGE_luci-app-banip is not set
 # CONFIG_PACKAGE_luci-app-bcp38 is not set
@@ -5265,7 +5268,6 @@ CONFIG_PACKAGE_luci-lib-nixio_openssl=y
 # CONFIG_PACKAGE_default-settings is not set
 # CONFIG_PACKAGE_default-settings-chn is not set
 # CONFIG_PACKAGE_luci-i18n-argon-config-zh-cn is not set
-# CONFIG_PACKAGE_luci-i18n-autoreboot-zh-cn is not set
 # CONFIG_PACKAGE_luci-i18n-base-ar is not set
 # CONFIG_PACKAGE_luci-i18n-base-bg is not set
 # CONFIG_PACKAGE_luci-i18n-base-bn is not set
@@ -5456,7 +5458,6 @@ CONFIG_PACKAGE_luci-lib-nixio_openssl=y
 #
 # CONFIG_PACKAGE_mktorrent is not set
 # CONFIG_PACKAGE_opentracker is not set
-# CONFIG_PACKAGE_opentracker6 is not set
 # CONFIG_PACKAGE_qbittorrent-enhanced-edition is not set
 # CONFIG_PACKAGE_rtorrent is not set
 # CONFIG_PACKAGE_rtorrent-rpc is not set
@@ -5564,11 +5565,10 @@ CONFIG_PACKAGE_curl=y
 # CONFIG_PACKAGE_ebtables-nft is not set
 # CONFIG_PACKAGE_fwknop is not set
 # CONFIG_PACKAGE_fwknopd is not set
-CONFIG_PACKAGE_ip6tables-extra=y
-CONFIG_PACKAGE_ip6tables-mod-fullconenat=y
-CONFIG_PACKAGE_ip6tables-mod-nat=y
-CONFIG_PACKAGE_ip6tables-nft=y
-CONFIG_PACKAGE_ip6tables-zz-legacy=y
+# CONFIG_PACKAGE_ip6tables-extra is not set
+# CONFIG_PACKAGE_ip6tables-mod-nat is not set
+# CONFIG_PACKAGE_ip6tables-nft is not set
+# CONFIG_PACKAGE_ip6tables-zz-legacy is not set
 # CONFIG_PACKAGE_iptables-mod-checksum is not set
 # CONFIG_PACKAGE_iptables-mod-cluster is not set
 # CONFIG_PACKAGE_iptables-mod-conntrack-extra is not set
@@ -5619,8 +5619,8 @@ CONFIG_PACKAGE_nftables-json=y
 # CONFIG_PACKAGE_shorewall6 is not set
 # CONFIG_PACKAGE_shorewall6-lite is not set
 # CONFIG_PACKAGE_snort3 is not set
-CONFIG_PACKAGE_xtables-legacy=y
-CONFIG_PACKAGE_xtables-nft=y
+# CONFIG_PACKAGE_xtables-legacy is not set
+# CONFIG_PACKAGE_xtables-nft is not set
 # end of Firewall
 
 #
