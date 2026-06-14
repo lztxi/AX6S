@@ -158,11 +158,15 @@ jobs:
         retain_days: 0
         keep_minimum_runs: 2
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@master
+    - name: Remove old Releases via GitHub CLI
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # 获取所有release的标签名，跳过最新的3个
+        releases=$(gh release list --limit 100 --json tagName --jq '.[].tagName' | tail -n +4)
+        if [ -n "$releases" ]; then
+          echo "$releases" | xargs -I {} gh release delete {} --yes --cleanup-tag
+        else
+          echo "No old releases to delete."
+        fi
