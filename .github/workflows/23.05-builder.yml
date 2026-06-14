@@ -163,10 +163,20 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # 获取所有release的标签名，跳过最新的3个
+        # 获取所有真实的 Release 标签名（只删发布的，不删只建了标签没发布的），跳过最新的3个
         releases=$(gh release list --limit 100 --json tagName --jq '.[].tagName' | tail -n +4)
+        
         if [ -n "$releases" ]; then
-          echo "$releases" | xargs -I {} gh release delete {} --yes --cleanup-tag
+          echo "准备清理的 Releases: $releases"
+          for release in $releases; do
+            echo "正在检查并尝试删除: $release"
+            # 只要GitHub上找不到这个资源就报错并退出，这里加了校验逻辑，避免报错中断
+            if gh release view "$release" &>/dev/null; then
+              gh release delete "$release" --yes --cleanup-tag || echo "删除失败: $release，请检查日志。"
+            else
+              echo "跳过: '$release' 不是一个有效的 Release。"
+            fi
+          done
         else
-          echo "No old releases to delete."
+          echo "没有发现需要删除的旧 Releases。"
         fi
