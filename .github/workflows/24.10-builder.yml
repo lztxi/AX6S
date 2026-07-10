@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: immortalwrt-openclash-缓存
+name: openwrt-24.10-缓存
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-24.10
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config_imm_op
+  CONFIG_FILE: .config_imm_24.10
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -153,16 +153,30 @@ jobs:
         files: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
+      uses: step-security/delete-workflow-runs@main
       with:
         retain_days: 0
         keep_minimum_runs: 2
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@master
+    - name: Remove old Releases via GitHub CLI
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        # 获取所有真实的 Release 标签名（只删发布的，不删只建了标签没发布的），跳过最新的3个
+        releases=$(gh release list --limit 100 --json tagName --jq '.[].tagName' | tail -n +4)
+        
+        if [ -n "$releases" ]; then
+          echo "准备清理的 Releases: $releases"
+          for release in $releases; do
+            echo "正在检查并尝试删除: $release"
+            # 只要GitHub上找不到这个资源就报错并退出，这里加了校验逻辑，避免报错中断
+            if gh release view "$release" &>/dev/null; then
+              gh release delete "$release" --yes --cleanup-tag || echo "删除失败: $release，请检查日志。"
+            else
+              echo "跳过: '$release' 不是一个有效的 Release。"
+            fi
+          done
+        else
+          echo "没有发现需要删除的旧 Releases。"
+        fi
